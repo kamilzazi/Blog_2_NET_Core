@@ -1,4 +1,5 @@
 using Blog_2.Data;
+using Blog_2.Data.FileManager;
 using Blog_2.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -44,6 +45,7 @@ namespace Blog_2
             });
 
             services.AddTransient<IRepository, Repository>();
+            services.AddTransient<IFileManager, FileManager>();
 
             services.AddMvc();
             services.AddMvc(options => options.EnableEndpointRouting = false);
@@ -56,6 +58,8 @@ namespace Blog_2
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseStaticFiles();
 
             app.UseAuthentication();
 
