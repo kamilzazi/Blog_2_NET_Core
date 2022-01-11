@@ -57,7 +57,7 @@ namespace Blog_2
             if (env.IsDevelopment())
             {
             }
-            //app.UseDeveloperExceptionPage();
+            app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();
 
